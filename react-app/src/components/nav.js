@@ -1,6 +1,7 @@
 import "../App.css";
 
 function Navigation({ scrollToReport }) {
+  // handleClick function to navigate to report section
   const handleClick = () => {
     scrollToReport();
   };

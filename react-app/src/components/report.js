@@ -7,6 +7,7 @@ const Report = React.forwardRef((props, ref) => {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Capitalize the first letter of each word in a string for visual appearance
   const capitalizeWords = (string) => {
     return string
       .split(" ")
@@ -14,14 +15,17 @@ const Report = React.forwardRef((props, ref) => {
       .join(" ");
   };
 
+   // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     const siteNameArray = siteNames.split(",").map((name) => name.trim());
     try {
+      // Send a POST request to the backend API
       const response = await axios.post("http://localhost:5003/process", {
         site_names: siteNameArray,
       });
+      // Map the API response to site-specific results
       const mappedResults = siteNameArray.map((name, index) => ({
         name,
         result: response.data.results[index],
@@ -39,6 +43,7 @@ const Report = React.forwardRef((props, ref) => {
       <div className="form-container">
         <img
           className="form-img"
+          alt="dog asset"
           src="https://static.wixstatic.com/media/b7ca96_8ca8ccf3bc8749bea3db2e04ba90e9f4~mv2.png/v1/crop/x_0,y_0,w_252,h_335/fill/w_109,h_145,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CHIA-dark.png"
         ></img>
         <div className="form-slogan">
@@ -67,7 +72,7 @@ const Report = React.forwardRef((props, ref) => {
         <div className="result-container">
           <p>Sorry no kachings to make this app spin faster, please wait!</p>
           <div className="hire-me">
-            in the meantime, feel free to check out my social links!
+            In the meantime, feel free to check out my social links!
           </div>
           <ul className="social-icons">
             <li>
@@ -111,7 +116,7 @@ const Report = React.forwardRef((props, ref) => {
               </a>
             </li>
           </ul>
-          <img src="https://media.giphy.com/media/vbeNMLuswd7RR25lah/giphy.gif"></img>
+          <img alt="loading" src="https://media.giphy.com/media/vbeNMLuswd7RR25lah/giphy.gif"></img>
         </div>
       ) : results ? (
         <div className="result-wrapper">

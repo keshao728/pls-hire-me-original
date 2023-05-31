@@ -1,9 +1,11 @@
 import "../App.css";
 
 function Splash({ scrollToReport }) {
+  // handleClick function to navigate to report section
   const handleClick = () => {
     scrollToReport();
   };
+
   return (
     <div className="splash-wrapper">
       <h1 className="slogan">

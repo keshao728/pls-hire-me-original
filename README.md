@@ -6,21 +6,23 @@ This tool conducts deep-dive searches using Google's Custom Search API, segmenti
 
 ## Table of Contents
 
-1. [Features](#Features)
-2. [Setup Instructions](#Setup)
-3. [Usage Instructions](#usage)
+1. [Features](#features)
+2. [Setup Instructions](#setup-instructions)
+3. [Usage Instructions](#usage-instructions)
 4. [Deployment Instructions](#deployment-instructions)
 
 ## Features
 
 ### Search Company Name
 
-You may search multiple company names by seperating names with a comma
+- You may search multiple company names by seperating the names with a comma
+
 <a href="https://github.com/keshao728/pls-hire-me"><img src="https://imgur.com/6eKxii3.gif" title="source: imgur.com" /></a>
 
 ### Report
 
-Generates a report for the company's main products or services, business strategies, and market perception
+- Generates a report for the company's main products or services, business strategies, and market perception
+
 <a href="https://github.com/keshao728/pls-hire-me"><img src="https://imgur.com/SntGku7.gif" title="source: imgur.com" /></a>
 
 ## Getting Started
@@ -51,15 +53,22 @@ The backend is a Python Flask application.
    ```
 
 2. Navigate to the backend directory:
-    ```bash
-    cd app
-    ```
+
+   ```bash
+   cd app
+   ```
 
 3. Install Python dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
-4. Start the application:
+
+4. Create the local server env file, replace the key to your API keys:
+   ```sh
+   cp .env.example .env.local
+   ```
+5. Start the application:
    ```bash
     python app.py
    ```
@@ -91,6 +100,7 @@ The frontend is a React application.
 - The application will then generate a report for each company, which will include information about their main product or service, business strategy, and market perception.
 
 ## Deployment Instructions
+
 - Work in progress
 
 Note: Don't forget to secure your API keys before deploying the application to a production environment.

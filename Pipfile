@@ -4,7 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-gunicorn = "*"
+flask = "*"
+flask_cors = "*"
+python-dotenv = "*"
+requests = "*"
+google-api-python-client = "*"
+langchain = "*"
+unstructured = "*"
+tabulate = "*"
+pdf2image = "*"
+faiss-cpu = "*"
+gunicorn = "20.1.0"
 
 [dev-packages]
 

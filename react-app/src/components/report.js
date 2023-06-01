@@ -22,7 +22,7 @@ const Report = React.forwardRef((props, ref) => {
     const siteNameArray = siteNames.split(",").map((name) => name.trim());
     try {
       // Send a POST request to the backend API
-      const response = await axios.post("http://localhost:5003/process", {
+      const response = await axios.post("http://localhost:5007/process", {
         site_names: siteNameArray,
       });
       // Map the API response to site-specific results

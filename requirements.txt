@@ -8,5 +8,5 @@ unstructured
 tabulate
 pdf2image
 faiss-cpu
-gunicorn==20.1.0
 openai
+gunicorn==20.1.0

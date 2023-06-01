@@ -1,0 +1,11 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "My app",
+  "engines": {
+      "node": "14.x"
+  },
+  "scripts": {
+      "heroku-postbuild": "cd react-app && npm install && npm run build"
+  }
+}

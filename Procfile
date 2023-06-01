@@ -1,1 +1,1 @@
-web: npm start
+web: /bin/sh -c gunicorn\ app:app

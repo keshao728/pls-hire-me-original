@@ -22,10 +22,21 @@ CORS(app)
 @app.route('/<path:path>')
 def serve(path):
     if path != "" and os.path.exists(app.static_folder + '/' + path):
-        return send_from_directory(app.static_folder, path)
+        if path.endswith('.css'):
+            return send_from_directory(app.static_folder + '/css', path)
+        elif path.endswith('.js'):
+            return send_from_directory(app.static_folder + '/js', path)
+        else:
+            return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, 'index.html')
-# Perform a Google search to retrieve relevant site information
+
+# def serve(path):
+#     if path != "" and os.path.exists(app.static_folder + '/' + path):
+#         return send_from_directory(app.static_folder, path)
+#     else:
+#         return send_from_directory(app.static_folder, 'index.html')
+# # Perform a Google search to retrieve relevant site information
 
 
 def google_search(query, api_key, cx_id, **kwargs):

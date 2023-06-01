@@ -13,8 +13,8 @@ from langchain import OpenAI
 from googleapiclient.discovery import build
 
 load_dotenv()
-
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='static', static_url_path='/static')
+# app = Flask(__name__, static_folder='static')
 CORS(app)
 
 # Serve React app as static files

@@ -22,13 +22,13 @@ const Report = React.forwardRef((props, ref) => {
     const siteNameArray = siteNames.split(",").map((name) => name.trim());
     console.log(siteNameArray, "siteNameArray");
     console.log(
-      await axios.post("http://localhost:5010/process", {
+      await axios.post("https://market-scope.herokuapp.com/process", {
         site_names: siteNameArray,
       })
     );
     try {
       // Send a POST request to the backend API
-      const response = await axios.post("http://localhost:5010/process", {
+      const response = await axios.post("https://market-scope.herokuapp.com/process", {
         site_names: siteNameArray,
       });
       // Map the API response to site-specific results

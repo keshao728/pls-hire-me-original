@@ -9,4 +9,4 @@ tabulate
 pdf2image
 faiss
 faiss-cpu
-
+gunicorn

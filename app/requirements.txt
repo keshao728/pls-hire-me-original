@@ -4,3 +4,5 @@ python-dotenv
 requests
 google-api-python-client
 langchain
+zappa
+unstructured

@@ -50,6 +50,10 @@ def google_search(query, api_key, cx_id, **kwargs):
     else:
         return []
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Hello World!"
+
 # Set up API endpoint
 @app.route('/process', methods=['POST'])
 def process_data():

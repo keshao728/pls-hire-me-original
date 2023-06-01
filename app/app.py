@@ -13,7 +13,7 @@ from langchain import OpenAI
 from googleapiclient.discovery import build
 
 load_dotenv()
-app = Flask(__name__, static_folder='app/static', static_url_path='/static')
+app = Flask(__name__, static_folder='static')
 
 # # Serve additional static files
 # @app.route('/static/<path:path>')
@@ -27,10 +27,10 @@ CORS(app)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
-    if path != "" and os.path.exists('app/static/' + path):
-        return send_from_directory('app/static', path)
+    if path != "" and os.path.exists(app.static_folder + path):
+        return send_from_directory(app.static_folder, path)
     else:
-        return send_from_directory('app/static', 'index.html')
+        return send_from_directory(app.static_folder, 'index.html')
 
 
 

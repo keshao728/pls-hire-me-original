@@ -7,6 +7,6 @@ langchain
 unstructured
 tabulate
 pdf2image
-faiss
 faiss-cpu
-gunicorn
+gunicorn==20.1.0
+

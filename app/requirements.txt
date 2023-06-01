@@ -6,3 +6,6 @@ google-api-python-client
 langchain
 zappa
 unstructured
+openai
+tiktoken
+faiss-cpu

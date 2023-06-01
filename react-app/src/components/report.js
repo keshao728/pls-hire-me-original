@@ -15,11 +15,17 @@ const Report = React.forwardRef((props, ref) => {
       .join(" ");
   };
 
-   // Handle form submission
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     const siteNameArray = siteNames.split(",").map((name) => name.trim());
+    console.log(siteNameArray, "siteNameArray");
+    console.log(
+      await axios.post("http://localhost:5010/process", {
+        site_names: siteNameArray,
+      })
+    );
     try {
       // Send a POST request to the backend API
       const response = await axios.post("http://localhost:5010/process", {
@@ -116,7 +122,10 @@ const Report = React.forwardRef((props, ref) => {
               </a>
             </li>
           </ul>
-          <img alt="loading" src="https://media.giphy.com/media/vbeNMLuswd7RR25lah/giphy.gif"></img>
+          <img
+            alt="loading"
+            src="https://media.giphy.com/media/vbeNMLuswd7RR25lah/giphy.gif"
+          ></img>
         </div>
       ) : results ? (
         <div className="result-wrapper">
